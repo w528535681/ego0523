@@ -1,0 +1,11 @@
+.fl{ float:left; margin-left:10px; margin-top:4px}
+.fr{ float:right; margin-right:10px; margin-top:3px}
+/* 静态页面下right:10px; */
+.orderfoods{ width:200px; border:1px solid #dedede; position:absolute; bottom:50px; z-index:999; right:14px; background-color:#00A65A;opacity:0.8;-webkit-opacity:0.8;filter:alpha(opacity=80);-moz-opacity:0.8;  }
+.dor_head{ border-bottom:1px solid #dedede; height:28px; color:#FFF; font-size:12px}
+.dor_head:after{ content:""; clear:both; display:block}
+.dor_foot{ margin-top:6px; color:#FFF}
+.dor_foot p{ padding:0 12px}
+.te-in{ text-indent:2em;}
+.dor_foot p span{ color:red}
+.te-al-ce{ text-align:center}
