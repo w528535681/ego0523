@@ -4,39 +4,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>ego管理后台</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Bootstrap 3.3.4 -->
-    <link href="${ctx}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- FontAwesome 4.3.0 -->
- 	<link href="${ctx}/bootstrap/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons 2.0.0 --
-    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
- 	 Theme style -->
-    <link href="${ctx}/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="${ctx}/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-    <!-- iCheck -->
-    <link href="${ctx}/plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css" />
-    <link href="${ctx}/css/index.css" rel="stylesheet" type="text/css" />
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->   
-    <!-- jQuery 2.1.4 -->
-    <script src="${ctx}/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-	<script src="${ctx}/js/global.js"></script>
-    <script src="${ctx}/js/upgrade.js"></script>
-	<script src="${ctx}/js/myFormValidate.js"></script>
-	<script src="${ctx}/js/layer/layer-min.js"></script><!--弹窗js 参考文档 http://layer.layui.com/-->
-	<script src="${ctx}/bootstrap/js/bootstrap.min.js"></script>
-	<script src="${ctx}/js/myAjax.js"></script>
-    <style type="text/css">
-    	#riframe{min-height:inherit !important}
-    </style>
-  <meta name="__hash__" content="40390ff8c1de6e5b5f80bd80d3196959_8f39a041787ac9854b174964cdc80849" /></head>
+	<#include "head.ftl">
+  	<meta name="__hash__" content="40390ff8c1de6e5b5f80bd80d3196959_8f39a041787ac9854b174964cdc80849" />
+  </head>
 <body class="skin-green-light sidebar-mini" style="overflow-y:hidden;">
 <div class="wrapper">
   <header class="main-header">
@@ -353,49 +323,9 @@
 <script src="${ctx}/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
 <script src="${ctx}/dist/js/app.js" type="text/javascript"></script>
 <script src="${ctx}/dist/js/demo.js" type="text/javascript"></script>
- 
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#riframe").height($(window).height()-50);// 浏览器当前窗口可视区域高度 静态页面下-100
-	$("#rightContent").height($(window).height()-39);// 静态页面下-100
-	$('.main-sidebar').height($(window).height()-50);
+<script src="${ctx}/js/index.js" type="text/javascript"></script>
 
-});
-
-var tmpmenu = 'index_Index';
-function makecss(obj){
-	$('li[data-id="'+tmpmenu+'"]').removeClass('active');
-	$(obj).addClass('active');
-	tmpmenu = $(obj).attr('data-id');
-}
-
-function callUrl(url){
-	layer.closeAll('iframe');
-	rightContent.location.href = url;
-}
-    var now_num = 0; //现在的数量
-    var is_close=0;
-    function ajaxOrderNotice(){
-        var url = '/index/Admin/Order/ajaxOrderNotice';
-        if(is_close > 0) return;
-        $.get(url,function(data){
-            //有新订单且数量不跟上次相等 弹出提示
-            if(data > 0 && data != now_num){
-                now_num = data;
-                if(document.getElementById('ordfoo').style.display == 'none'){
-                    $('#orderAmount').text(data);
-                    $('#ordfoo').show();
-                }
-            }
-        })
-//        setTimeout('ajaxOrderNotice()',5000);
-    }
-//setTimeout('ajaxOrderNotice()',5000);
-</script>
 <!-- 新订单提醒-s -->
-<style type="text/css">
-
-</style>
 <div id="ordfoo" class="orderfoods" style="">
 	<div class="dor_head">
     	<p class="fl">新订单通知</p>
@@ -406,23 +336,6 @@ function callUrl(url){
         <p class="te-al-ce"><a href="/index/Admin/Order/index" target='rightContent'><span>点击查看</span></a></p>
     </div>
 </div>
-<script type="text/javascript">
-	function closes(){
-	       is_close = 1;
-		document.getElementById('ordfoo').style.display = 'none';
-	}
-	// 没有点击收货确定的按钮让他自己收货确定    
-	var timestamp = Date.parse(new Date());
-	$.ajax({
-        type:'post',
-        url:"/index/Admin/System/login_task",
-        data:{timestamp:timestamp},
-        timeout : 100000000, //超时时间设置，单位毫秒
-        success:function(){
-            // 执行定时任务
-        }
-	});
-</script>
 <!-- 新订单提醒-e -->
 </body>
 </html>
