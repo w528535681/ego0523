@@ -1,11 +1,91 @@
 <!-- 设置项目根路径全局变量 -->
 <#assign ctx=request.contextPath/>
-
 <!DOCTYPE html>
 <html>
 <head>
     <#include "../../head.ftl">
-    <meta name="__hash__" content="3089b9badfca8307d7d520487d125ae4_6385f66dff50b4c04db3ec79b8a9d245"/>4
+    <script type="text/javascript">
+        function delfunc(obj) {
+            layer.confirm('确认删除？', {
+                    btn: ['确定', '取消'] //按钮
+                }, function () {
+                    $.ajax({
+                        type: 'post',
+                        url: $(obj).attr('data-url'),
+                        data: {act: 'del', del_id: $(obj).attr('data-id')},
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data == 1) {
+                                layer.msg('操作成功', {icon: 1});
+                                $(obj).parent().parent().remove();
+                            } else {
+                                layer.msg(data, {icon: 2, time: 2000});
+                            }
+                            layer.closeAll();
+                        }
+                    })
+                }, function (index) {
+                    layer.close(index);
+                    return false;// 取消
+                }
+            );
+        }
+
+        //全选
+        function selectAll(name, obj) {
+            $('input[name*=' + name + ']').prop('checked', $(obj).checked);
+        }
+
+        function get_help(obj) {
+            layer.open({
+                type: 2,
+                title: '帮助手册',
+                shadeClose: true,
+                shade: 0.3,
+                area: ['90%', '90%'],
+                content: $(obj).attr('data-url'),
+            });
+        }
+
+        function delAll(obj, name) {
+            var a = [];
+            $('input[name*=' + name + ']').each(function (i, o) {
+                if ($(o).is(':checked')) {
+                    a.push($(o).val());
+                }
+            })
+            if (a.length == 0) {
+                layer.alert('请选择删除项', {icon: 2});
+                return;
+            }
+            layer.confirm('确认删除？', {btn: ['确定', '取消']}, function () {
+                    $.ajax({
+                        type: 'get',
+                        url: $(obj).attr('data-url'),
+                        data: {act: 'del', del_id: a},
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data == 1) {
+                                layer.msg('操作成功', {icon: 1});
+                                $('input[name*=' + name + ']').each(function (i, o) {
+                                    if ($(o).is(':checked')) {
+                                        $(o).parent().parent().remove();
+                                    }
+                                })
+                            } else {
+                                layer.msg(data, {icon: 2, time: 2000});
+                            }
+                            layer.closeAll();
+                        }
+                    })
+                }, function (index) {
+                    layer.close(index);
+                    return false;// 取消
+                }
+            );
+        }
+    </script>
+    <meta name="__hash__" content="3089b9badfca8307d7d520487d125ae4_6385f66dff50b4c04db3ec79b8a9d245"/>
 </head>
 <body style="background-color:#ecf0f5;">
 
@@ -50,7 +130,7 @@
                                 <label class="control-label col-sm-2">手机分类名称</label>
                                 <div class="col-sm-6">
                                     <input type="text" placeholder="手机分类名称" class="form-control large"
-                                           name="mobile_name" value="">
+                                           name="mobileName" value="">
                                     <span class="help-inline" style="color:#F00; display:none;"
                                           id="err_mobile_name"></span>
                                 </div>
@@ -59,8 +139,10 @@
                                 <label0 class="control-label col-sm-2">上级分类</label0>
 
                                 <div class="col-sm-3">
+                                    <input type="hidden" name="parentId" id="parentId" value="0">
+                                    <input type="hidden" name="level" id="level" value="1">
                                     <select name="parent_id_1" id="parent_id_1"
-                                            onchange="getCategory(this.value,'parent_id_2','0' );"
+                                            onchange="getCategory(this.value,'parent_id_2','0');"
                                             class="small form-control">
                                         <option value="0">顶级分类</option>
                                         <#list gcList as gc>
@@ -69,7 +151,7 @@
                                     </select>
                                 </div>
                                 <div class="col-sm-3">
-                                    <select name="parent_id_2" id="parent_id_2" class="small form-control">
+                                    <select name="parent_id_2" id="parent_id_2" class="small form-control" onchange="setParentId(this.value,'3')">
                                         <option value="0">请选择商品分类</option>
                                     </select>
                                 </div>
@@ -80,7 +162,7 @@
                                 <div class="col-sm-10">
                                     <label>
                                         <input checked="checked" type="radio" name="is_show" value="1"> 是
-                                        <input type="radio" name="is_show" value="0"> 否
+                                        <input type="radio" name="isShow" value="0"> 否
 
                                     </label>
                                 </div>
@@ -89,7 +171,7 @@
                                 <label class="control-label col-sm-2">分类分组:</label>
 
                                 <div class="col-sm-1">
-                                    <select name="cat_group" id="cat_group" class="form-control">
+                                    <select name="catGroup" id="cat_group" class="form-control">
                                         <option value="0">0</option>
                                         <option value='1'>1</option>
                                         "
@@ -147,7 +229,7 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-2">显示排序</label>
                                 <div class="col-sm-1">
-                                    <input type="text" placeholder="50" class="form-control large" name="sort_order"
+                                    <input type="text" placeholder="50" class="form-control large" name="sortOrder"
                                            value=""/>
                                     <span class="help-inline" style="color:#F00; display:none;"
                                           id="err_sort_order"></span>
@@ -157,7 +239,7 @@
                                 <label class="control-label col-sm-2">分佣比例</label>
                                 <div class="col-sm-1">
                                     <input type="text" placeholder="50" class="form-control large"
-                                           name="commission_rate" id="commission_rate" value="0"
+                                           name="commissionRate" id="commission_rate" value="0"
                                            onpaste="this.value=this.value.replace(/[^\d.]/g,'')"
                                            onkeyup="this.value=this.value.replace(/[^\d.]/g,'')"/>
                                 </div>
@@ -170,38 +252,44 @@
                             <input type="hidden" name="id" value="">
                             <button type="reset" class="btn btn-primary pull-left"><i class="icon-ok"></i>重填</button>
                             <button type="button"
-                                    onclick="ajax_submit_form('category_form','/index/Admin/Goods/addEditCategory/is_ajax/1');"
+                                    onclick="ajaxSubmitForm();"
                                     class="btn btn-primary pull-right"><i class="icon-ok"></i>提交
                             </button>
                         </div>
                         <input type="hidden" name="__hash__"
-                               value="3089b9badfca8307d7d520487d125ae4_6385f66dff50b4c04db3ec79b8a9d245"/>
-                    </form>
+                               value="3089b9badfca8307d7d520487d125ae4_6385f66dff50b4c04db3ec79b8a9d245"/></form>
                 </div>
             </div>
         </div>
     </section>
 </div>
 <script>
+
     /** 以下是编辑时默认选中某个商品分类*/
     $(document).ready(function () {
 
+
     });
+
 </script>
+
 <script>
     /**
      * 获取多级联动的商品分类
      * id:当前选择框的值
      * next：下级选择框显示的内容
-     * select_id:
+     * select_id:level
      */
     function getCategory(id, next, select_id) {
-        var url = '${ctx}/category/'+id;
-        //console.log(url);
-// 用户重新选择顶级分类时，重置下级分类为：请选择商品分类，且清空下级分类信息
+        var url = '${ctx}/category/' + id;
+        // 用户重新选择顶级分类时，重置下级分类为：请选择商品分类，且清空下级分类信息
         var htmlStr = "<option value='0'>请选择商品分类</option>";
-        if(0==id){
-            $("#"+next).html(htmlStr);
+        //修改parentId
+        $("#parentId").val(id);
+        if (0 == id) {
+            $("#" + next).html(htmlStr);
+            //修改level
+            $("#level").val(1);
             return;
         }
         $.ajax({
@@ -213,16 +301,60 @@
             success: function (result) {
                 if (result.length > 0) {
                     for (i = 0; i < result.length; i++) {
-                        htmlStr += "<option value='" + result[i].id + "'>"
-                            + result[i].name + "</option>"
+                        htmlStr += "<option value='" + result[i].id + "'>" + result[i].name + "</option>"
                     }
-                    $("#"+next).html(htmlStr);
-                }else {
+                    $("#" + next).html(htmlStr);
+                    $("#level").val(2);
+                } else {
                     layer.alert("获取子分类失败！");
                 }
             }
         });
     }
+
+    /**
+     *保存分类
+     */
+    function ajaxSubmitForm() {
+        $.ajax({
+            url: "${ctx}/category/save",
+            type: "post",
+            data: $("#category_form").serialize(),
+            dataType:"JSON",
+            success:function (result) {
+                if (result.code==200){
+                    layer.confirm("保存成功",{btn:['继续新增','返回列表']},
+                        function () {
+                            window.location.href="${ctx}/category/add";
+                        },function () {
+                            window.location.href="${ctx}/category/list";
+                        });
+                }else {
+                    layer.alert("保存失败");
+                }
+            },
+            error:function () {
+                layer.alert("保存失败");
+            }
+        });
+    }
+
+    /**
+     * 设置parentId和level
+     */
+    function setParentId(parentId,level) {
+        // 修改parentId和level
+        if (0==parentId){
+            $("#parentId").val($("#parent_id_1").val);
+            $("#level").val(2);
+            return;
+        }
+        // 修改parentId和level
+        $("#parentId").val(parentId);
+        $("#level").val(level);
+    }
+
+
 </script>
 
 </body>
