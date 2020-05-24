@@ -5,7 +5,7 @@
 <html>
 <head>
     <#include "../../head.ftl">
-    <meta name="__hash__" content="3089b9badfca8307d7d520487d125ae4_6385f66dff50b4c04db3ec79b8a9d245"/>
+    <meta name="__hash__" content="3089b9badfca8307d7d520487d125ae4_6385f66dff50b4c04db3ec79b8a9d245"/>4
 </head>
 <body style="background-color:#ecf0f5;">
 
@@ -60,20 +60,12 @@
 
                                 <div class="col-sm-3">
                                     <select name="parent_id_1" id="parent_id_1"
-                                            onchange="get_category(this.value,'parent_id_2','0');"
+                                            onchange="getCategory(this.value,'parent_id_2','0' );"
                                             class="small form-control">
                                         <option value="0">顶级分类</option>
-                                        <option value="1">手机 、 数码 、 通信</option>
-                                        <option value="2">家用电器</option>
-                                        <option value="3">电脑、办公</option>
-                                        <option value="4">家居、家具、家装、厨具</option>
-                                        <option value="5">男装、女装、童装、内衣</option>
-                                        <option value="6">个人化妆</option>
-                                        <option value="7">鞋、箱包、珠宝、手表</option>
-                                        <option value="8">运动户外</option>
-                                        <option value="9">汽车用品</option>
-                                        <option value="10">母婴用品、儿童玩具</option>
-                                        <option value="11">图书、音像、电子书</option>
+                                        <#list gcList as gc>
+                                            <option value="${gc.id}">${gc.name}</option>
+                                        </#list>
                                     </select>
                                 </div>
                                 <div class="col-sm-3">
@@ -196,6 +188,42 @@
 
     });
 </script>
+<script>
+    /**
+     * 获取多级联动的商品分类
+     * id:当前选择框的值
+     * next：下级选择框显示的内容
+     * select_id:
+     */
+    function getCategory(id, next, select_id) {
+        var url = '${ctx}/category/'+id;
+        //console.log(url);
+// 用户重新选择顶级分类时，重置下级分类为：请选择商品分类，且清空下级分类信息
+        var htmlStr = "<option value='0'>请选择商品分类</option>";
+        if(0==id){
+            $("#"+next).html(htmlStr);
+            return;
+        }
+        $.ajax({
+            type: "GET",
+            url: url,
+            error: function (request) {
+                layer.alert("获取子分类失败！");
+            },
+            success: function (result) {
+                if (result.length > 0) {
+                    for (i = 0; i < result.length; i++) {
+                        htmlStr += "<option value='" + result[i].id + "'>"
+                            + result[i].name + "</option>"
+                    }
+                    $("#"+next).html(htmlStr);
+                }else {
+                    layer.alert("获取子分类失败！");
+                }
+            }
+        });
+    }
+</script>
+
 </body>
-<script src="${ctx}/js/category.add.js" type="text/javascript"></script>
 </html>
