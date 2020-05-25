@@ -61,6 +61,11 @@
       <artifactId>druid</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>com.qiniu</groupId>
+      <artifactId>qiniu-java-sdk</artifactId>
+    </dependency>
+
     <!-- spring boot test 依赖 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>

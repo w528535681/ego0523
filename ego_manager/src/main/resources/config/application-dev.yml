@@ -55,6 +55,10 @@ spring:
       # 4.TemplateExceptionHandler.RETHROW_HANDLER简单重新抛出所有异常而不会做其他的事情
       # 5.使用自定义异常类实现TemplateExceptionHandler重写handleTemplateException方法
       template_exception_handler: html_debug
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 1000MB
 # MyBatis
 mybatis:
   # 配置 MyBatis数据返回类型别名(默认别名是类名)
@@ -66,3 +70,14 @@ mybatis:
 logging:
   level:
     com.shsxt.manager.mapper: debug
+
+# 七牛云配置------------------------------------
+# 七牛密钥，配上自己申请的七牛账号对应的密钥
+qiniu.AccessKey: b8HFG1sUysK8iauG9FWGT7I9zvTuAYYDe1SwHfLr
+qiniu.SecretKey: hljZM60E-FlZICci_2JGabCWM35xA8kd7H8CK7VB
+# 七牛空间名
+qiniu.Bucket: ego-37
+# 外链访问路径
+qiniu.cdn.prefix: qau68duvi.bkt.clouddn.com
+
+
