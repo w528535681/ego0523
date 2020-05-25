@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.shsxt.generator.mapper.GoodsMapper">
-  <resultMap id="BaseResultMap" type="com.shsxt.generator.pojo.Goods">
+<mapper namespace="com.shsxt.manager.mapper.GoodsMapper">
+  <resultMap id="BaseResultMap" type="com.shsxt.manager.pojo.Goods">
     <id column="goods_id" jdbcType="INTEGER" property="goodsId" />
     <result column="cat_id" jdbcType="INTEGER" property="catId" />
     <result column="extend_cat_id" jdbcType="INTEGER" property="extendCatId" />
@@ -39,7 +39,7 @@
     <result column="spu" jdbcType="VARCHAR" property="spu" />
     <result column="sku" jdbcType="VARCHAR" property="sku" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shsxt.generator.pojo.Goods">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shsxt.manager.pojo.Goods">
     <result column="goods_content" jdbcType="LONGVARCHAR" property="goodsContent" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -110,7 +110,7 @@
   <sql id="Blob_Column_List">
     goods_content
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.shsxt.generator.pojo.GoodsExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.shsxt.manager.pojo.GoodsExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -126,7 +126,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.shsxt.generator.pojo.GoodsExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.shsxt.manager.pojo.GoodsExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -152,13 +152,13 @@
     delete from t_goods
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.shsxt.generator.pojo.GoodsExample">
+  <delete id="deleteByExample" parameterType="com.shsxt.manager.pojo.GoodsExample">
     delete from t_goods
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.shsxt.generator.pojo.Goods">
+  <insert id="insert" parameterType="com.shsxt.manager.pojo.Goods">
     insert into t_goods (goods_id, cat_id, extend_cat_id, 
       goods_sn, goods_name, click_count, 
       brand_id, store_count, comment_count, 
@@ -186,7 +186,10 @@
       #{commission,jdbcType=DECIMAL}, #{spu,jdbcType=VARCHAR}, #{sku,jdbcType=VARCHAR}, 
       #{goodsContent,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.shsxt.generator.pojo.Goods">
+  <insert id="insertSelective" parameterType="com.shsxt.manager.pojo.Goods">
+    <selectKey keyProperty="goodsId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into t_goods
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="goodsId != null">
@@ -415,7 +418,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.shsxt.generator.pojo.GoodsExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.shsxt.manager.pojo.GoodsExample" resultType="java.lang.Long">
     select count(*) from t_goods
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -625,7 +628,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.shsxt.generator.pojo.Goods">
+  <update id="updateByPrimaryKeySelective" parameterType="com.shsxt.manager.pojo.Goods">
     update t_goods
     <set>
       <if test="catId != null">
@@ -739,7 +742,7 @@
     </set>
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shsxt.generator.pojo.Goods">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shsxt.manager.pojo.Goods">
     update t_goods
     set cat_id = #{catId,jdbcType=INTEGER},
       extend_cat_id = #{extendCatId,jdbcType=INTEGER},
@@ -779,7 +782,7 @@
       goods_content = #{goodsContent,jdbcType=LONGVARCHAR}
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.shsxt.generator.pojo.Goods">
+  <update id="updateByPrimaryKey" parameterType="com.shsxt.manager.pojo.Goods">
     update t_goods
     set cat_id = #{catId,jdbcType=INTEGER},
       extend_cat_id = #{extendCatId,jdbcType=INTEGER},

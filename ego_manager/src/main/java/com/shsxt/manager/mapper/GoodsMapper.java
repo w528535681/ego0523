@@ -1,9 +1,10 @@
-package com.shsxt.generator.mapper;
+package com.shsxt.manager.mapper;
 
-import com.shsxt.generator.pojo.Goods;
-import com.shsxt.generator.pojo.GoodsExample;
-import java.util.List;
+import com.shsxt.manager.pojo.Goods;
+import com.shsxt.manager.pojo.GoodsExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface GoodsMapper {
     long countByExample(GoodsExample example);
