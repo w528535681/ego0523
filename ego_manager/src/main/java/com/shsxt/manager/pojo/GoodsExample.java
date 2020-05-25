@@ -1,4 +1,4 @@
-package com.shsxt.generator.pojo;
+package com.shsxt.manager.pojo;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

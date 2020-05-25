@@ -248,8 +248,8 @@ function GetRTime(end_time) {
  * select_id:level
  * hidden_id:隐藏域id
  */
-function get_category(id, next, select_id, hidden_id) {
-    var url = getProjectName() + '/goods/category/' + id;
+function getCategory(id, next, select_id, hidden_id) {
+    var url = getProjectName() + '/category/' + id;
     // 用户重新选择顶级分类时，重置下级分类为：请选择商品分类，且清空下级分类信息
     var htmlStr = "<option value='0'>请选择商品分类</option>";
     if (0 == id) {

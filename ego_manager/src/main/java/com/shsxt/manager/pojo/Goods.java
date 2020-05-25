@@ -1,4 +1,4 @@
-package com.shsxt.generator.pojo;
+package com.shsxt.manager.pojo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
