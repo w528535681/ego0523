@@ -14,5 +14,4 @@ public interface GoodsService {
      * @return
      */
     BaseResult save(Goods goods);
-
 }

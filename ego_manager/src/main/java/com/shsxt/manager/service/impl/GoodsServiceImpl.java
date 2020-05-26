@@ -1,13 +1,19 @@
 package com.shsxt.manager.service.impl;
 
 import com.shsxt.common.result.BaseResult;
+import com.shsxt.common.result.FileResult;
 import com.shsxt.manager.mapper.GoodsMapper;
 import com.shsxt.manager.pojo.Goods;
 import com.shsxt.manager.service.GoodsService;
+import com.shsxt.manager.service.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.HtmlUtils;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * 商品Service实现类
@@ -21,7 +27,6 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Autowired
     private GoodsMapper goodsMapper;
-
 
     @Override
     public BaseResult save(Goods goods) {
@@ -49,4 +54,5 @@ public class GoodsServiceImpl implements GoodsService {
 
         return baseResult;
     }
+
 }
