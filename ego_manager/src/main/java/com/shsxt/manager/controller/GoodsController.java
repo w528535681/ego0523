@@ -51,8 +51,13 @@ public class GoodsController {
      * @return
      */
     @RequestMapping("list")
-    public String list(){
+    public String list(Model model){
 
+        //查询所有分类
+        model.addAttribute("gcList",goodsCategroyService.selectList());
+
+        //查询所有品牌
+        model.addAttribute("brandList",brandService.selectList());
         return "goods/goods-list";
     }
 
@@ -105,6 +110,20 @@ public class GoodsController {
             return BaseResult.error();
         }
 
+    }
+
+    /**
+     * 商品列表-分页查询
+     * @param goods
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping("search")
+    @ResponseBody
+    public BaseResult search(Goods goods,Integer pageNum,Integer pageSize){
+
+        return goodsService.search(goods,pageNum,pageSize);
     }
 }
 

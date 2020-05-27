@@ -14,4 +14,13 @@ public interface GoodsService {
      * @return
      */
     BaseResult save(Goods goods);
+
+    /**
+     * 商品列表-分页搜索
+     * @param goods
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    BaseResult search(Goods goods,Integer pageNum,Integer pageSize);
 }

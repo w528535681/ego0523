@@ -121,4 +121,13 @@ public class GoodsCategoryServiceImpl implements GoodsCategroyService {
 		return gcvList01;
 	}
 
+	/**
+	 * 查询所有商品的分类
+	 * @return
+	 */
+	@Override
+	public List<GoodsCategory> selectList() {
+		return goodsCategoryMapper.selectByExample(new GoodsCategoryExample());
+	}
+
 }
