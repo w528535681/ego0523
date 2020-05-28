@@ -2,6 +2,7 @@ package com.shsxt.manager.service.impl;
 
 
 import com.shsxt.common.result.BaseResult;
+import com.shsxt.common.util.JsonUtil;
 import com.shsxt.manager.mapper.GoodsCategoryMapper;
 import com.shsxt.manager.pojo.GoodsCategory;
 import com.shsxt.manager.pojo.GoodsCategoryExample;
@@ -9,7 +10,11 @@ import com.shsxt.manager.service.GoodsCategroyService;
 import com.shsxt.manager.vo.GoodsCategoryVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +32,13 @@ public class GoodsCategoryServiceImpl implements GoodsCategroyService {
 	@Autowired
 	private GoodsCategoryMapper goodsCategoryMapper;
 
+	@Autowired
+	private RedisTemplate<String,Object> redisTemplate;
+	@Value("${goods.category.list.key}")
+	private String goodsCategoryRedisKey;
+
 	/**
 	 * 查询所有顶级分类
-	 *
 	 * @return
 	 */
 	@Override
@@ -58,15 +67,20 @@ public class GoodsCategoryServiceImpl implements GoodsCategroyService {
 
 	/**
 	 * 保存
-	 *
 	 * @param goodsCategory
 	 * @return
 	 */
 	@Override
 	public BaseResult save(GoodsCategory goodsCategory) {
-		//保存
+		///保存
 		int result = goodsCategoryMapper.insertSelective(goodsCategory);
-		return result > 0 ? BaseResult.success() : BaseResult.error();
+		if (result>0){
+			//清空redis里的数据
+			redisTemplate.delete("goods*");
+			return BaseResult.success();
+		}else {
+			return BaseResult.error();
+		}
 	}
 
 
@@ -78,7 +92,16 @@ public class GoodsCategoryServiceImpl implements GoodsCategroyService {
 	public List<GoodsCategoryVo> selectAllList() {
 
 		//创建顶级分类的List
-		List<GoodsCategoryVo> gcvList01 = new ArrayList<GoodsCategoryVo>();
+		List<GoodsCategoryVo> gcvList01 = new ArrayList<>();
+
+		// 先从redis查询是否有数据
+		ValueOperations<String, Object> stringObjectValueOperations = redisTemplate.opsForValue();
+		String gcvListJson = (String) stringObjectValueOperations.get(goodsCategoryRedisKey);
+		//如果有值，直接转成list返回，没有就去数据库查询
+		if (!StringUtils.isEmpty(gcvListJson)){
+			List<GoodsCategoryVo> gcvList = JsonUtil.jsonToList(gcvListJson,GoodsCategoryVo.class);
+			return gcvList;
+		}
 
 		//创建查询对象
 		GoodsCategoryExample example = new GoodsCategoryExample();
@@ -118,6 +141,8 @@ public class GoodsCategoryServiceImpl implements GoodsCategroyService {
 			gv01.setChildrenList(gcvList02);
 			gcvList01.add(gv01);
 		}
+		//将数据库查到的数据转成json字符串存入redis
+		stringObjectValueOperations.set(goodsCategoryRedisKey,JsonUtil.object2JsonStr(gcvList01));
 		return gcvList01;
 	}
 

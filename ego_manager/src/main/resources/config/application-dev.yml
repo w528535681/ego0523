@@ -59,6 +59,27 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 1000MB
+
+  # Redis配置
+  redis:
+    timeout: 10000ms                        # 连接超时时间
+    host: 192.168.241.251                   # Redis服务器地址
+    port: 6379                              # Redis服务器端口
+    password: root                          # 密码
+    database: 0                             # 选择哪个库，默认0库
+    lettuce:
+      pool:
+        max-active: 1024                    # 最大连接数，默认 8
+        max-wait: 10000ms                   # 最大连接阻塞等待时间，单位毫秒，默认 -1
+        max-idle: 200                       # 最大空闲连接，默认 8
+        min-idle: 5                          # 最小空闲连接，默认 0
+
+# Redis Key
+# 商品分类列表 Key
+goods.category.list.key: goods:category:list:goodsCategoryList
+
+
+
 # MyBatis
 mybatis:
   # 配置 MyBatis数据返回类型别名(默认别名是类名)
@@ -70,6 +91,7 @@ mybatis:
 logging:
   level:
     com.shsxt.manager.mapper: debug
+
 
 # 七牛云配置------------------------------------
 # 七牛密钥，配上自己申请的七牛账号对应的密钥
