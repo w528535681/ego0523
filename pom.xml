@@ -13,6 +13,8 @@
         <module>ego_common</module>
         <module>ego_manager</module>
         <module>ego_generator</module>
+        <module>ego_portal</module>
+        <module>ego_rpc</module>
     </modules>
 
     <!-- 继承 spring-boot-starter-parent 依赖 -->

@@ -4,3 +4,6 @@
 /ego_common/target/
 /ego_manager/target/
 /ego_generator/target/
+/ego_portal/target/
+/ego_rpc/target/classes/
+/ego_rpc/target/
