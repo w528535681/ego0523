@@ -64,3 +64,6 @@ logging:
 # Redis Key
 # 商品分类列表 Key
 goods.category.list.key: goods:category:list:goodsCategoryList
+
+# Elasticsearch
+elasticsearch.address: 192.168.241.251:9200, 192.168.241.251:9201, 192.168.241.251:9202

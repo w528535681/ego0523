@@ -103,3 +103,10 @@ mybatis:
 logging:
   level:
     com.ego.manager.mapper: debug
+
+#关闭es健康监测
+management:
+  health:
+    elasticsearch:
+      enabled: false
+
