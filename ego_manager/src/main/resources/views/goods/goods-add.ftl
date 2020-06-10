@@ -4,14 +4,14 @@
 <html>
 <head>
     <#include "../head.ftl">
-    <link rel="stylesheet" href="${ctx}/css/fileinput.min.css"></link>
-    <script type="text/javascript" src="${ctx}/js/fileinput.js"></script>
+    <link rel="stylesheet" href="${ctx}/static/css/fileinput.min.css"></link>
+    <script type="text/javascript" src="${ctx}/static/js/fileinput.js"></script>
     <!-- 对中文的支持 -->
-    <script type="text/javascript" src="${ctx}/js/fileinput_locale_zh.js"></script>
+    <script type="text/javascript" src="${ctx}/static/js/fileinput_locale_zh.js"></script>
     <!-- 百度 ueditor -->
-    <script type="text/javascript" charset="utf-8" src="${ctx}/plugins/Ueditor/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="${ctx}/plugins/Ueditor/ueditor.all.js"></script>
-    <script type="text/javascript" charset="utf-8" src="${ctx}/plugins/Ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${ctx}/static/plugins/Ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${ctx}/static/plugins/Ueditor/ueditor.all.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${ctx}/static/plugins/Ueditor/lang/zh-cn/zh-cn.js"></script>
 
     <script type="text/javascript">
         function delfunc(obj) {
@@ -867,7 +867,7 @@
      * 在线编辑器相 关配置 js
      *  参考 地址 http://fex.baidu.com/ueditor/
      */
-    window.UEDITOR_Admin_URL = "${ctx}/plugins/Ueditor/";
+    window.UEDITOR_Admin_URL = "${ctx}/static/plugins/Ueditor/";
     var URL_upload = "/index/Admin/Ueditor/imageUp/savepath/goods";
     var URL_fileUp = "/index/Admin/Ueditor/fileUp/savepath/article";
     var URL_scrawlUp = "/index/Admin/Ueditor/scrawlUp/savepath/article";

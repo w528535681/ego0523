@@ -15,7 +15,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b></b></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><img src="${ctx}/images/ego_logo.png" width="40" height="30">&nbsp;&nbsp;<b>ego</b></span>
+        <span class="logo-lg"><img src="${ctx}/static/images/ego_logo.png" width="40" height="30">&nbsp;&nbsp;<b>ego</b></span>
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top" role="navigation">
@@ -317,13 +317,13 @@
    <div class="control-sidebar-bg"></div>
 </div>
 
-<script src="${ctx}/js/jquery-ui.min.js" type="text/javascript"></script>
-<script src="${ctx}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="${ctx}/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="${ctx}/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
-<script src="${ctx}/dist/js/app.js" type="text/javascript"></script>
-<script src="${ctx}/dist/js/demo.js" type="text/javascript"></script>
-<script src="${ctx}/js/index.js" type="text/javascript"></script>
+<script src="${ctx}/static/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="${ctx}/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${ctx}/static/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="${ctx}/static/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
+<script src="${ctx}/static/dist/js/app.js" type="text/javascript"></script>
+<script src="${ctx}/static/dist/js/demo.js" type="text/javascript"></script>
+<script src="${ctx}/static/js/index.js" type="text/javascript"></script>
 
 <!-- 新订单提醒-s -->
 <div id="ordfoo" class="orderfoods" style="">

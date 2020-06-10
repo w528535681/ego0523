@@ -4,10 +4,10 @@
 <html>
 <head>
     <#include "../../head.ftl">
-    <link rel="stylesheet" href="${ctx}/css/fileinput.min.css"></link>
-    <script type="text/javascript" src="${ctx}/js/fileinput.js"></script>
+    <link rel="stylesheet" href="${ctx}/static/css/fileinput.min.css"></link>
+    <script type="text/javascript" src="${ctx}/static/js/fileinput.js"></script>
     <!-- 对中文的支持 -->
-    <script type="text/javascript" src="${ctx}/js/fileinput_locale_zh.js"></script>
+    <script type="text/javascript" src="${ctx}/static/js/fileinput_locale_zh.js"></script>
     <script type="text/javascript">
         function delfunc(obj) {
             layer.confirm('确认删除？', {

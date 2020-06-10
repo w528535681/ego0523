@@ -65,7 +65,7 @@ spring:
     timeout: 10000ms                        # 连接超时时间
     host: 192.168.241.251                   # Redis服务器地址
     port: 6379                              # Redis服务器端口
-    password: root                          # 密码
+    #password: root                          # 密码
     database: 0                             # 选择哪个库，默认0库
     lettuce:
       pool:
@@ -74,9 +74,30 @@ spring:
         max-idle: 200                       # 最大空闲连接，默认 8
         min-idle: 5                          # 最小空闲连接，默认 0
 
+
+  # Dubbo
+  dubbo:
+    #开启dubbo服务
+    server: true
+    # 提供方应用信息，用于计算依赖关系
+    application:
+      name: rpc-consumer
+    # 使用 zookeeper 注册中心暴露服务地址
+    registry:
+      address: zookeeper://192.168.241.251:2181
+    # 用 dubbo 协议在 20880 端口暴露服务
+    protocol:
+      name: dubbo
+      port: 20881
+    # 扫描需要暴露的服务接口包
+    scan:
+      base-packages: com.shsxt.manager
+
 # Redis Key
 # 商品分类列表 Key
 goods.category.list.key: goods:category:list:goodsCategoryList
+#用户票据key
+user.ticket: user:userTicket
 
 
 

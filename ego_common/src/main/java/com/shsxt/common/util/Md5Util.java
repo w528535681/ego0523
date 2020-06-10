@@ -61,6 +61,7 @@ public class Md5Util {
     public static void main(String[] args) {
         String result = getMd5WithSalt("123456", "a2ck");
         System.out.println(result);
+
     }
 
 }
