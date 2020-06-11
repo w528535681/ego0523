@@ -6,7 +6,7 @@
     <title>ego管理后台</title>
     <#include "../head.ftl">
     <!-- 引入doT.js -->
-    <script type="text/javascript" src="${ctx}/js/doT.min.js"></script>
+    <script type="text/javascript" src="${ctx}/static/js/doT.min.js"></script>
     <script type="text/javascript">
         function delfunc(obj) {
             layer.confirm('确认删除？', {

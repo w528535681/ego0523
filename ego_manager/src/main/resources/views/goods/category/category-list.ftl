@@ -152,11 +152,11 @@
                                             </td>
                                             <td><span>${gcv01.mobileName}</span></td>
                                             <td>
-                                                <img width="20" height="20" src="${ctx}/images/yes.png"
+                                                <img width="20" height="20" src="${ctx}/static/images/yes.png"
                                                      onclick="changeTableVal('goods_category','id','1','is_hot',this)"/>
                                             </td>
                                             <td>
-                                                <img width="20" height="20" src="${ctx}/images/yes.png"
+                                                <img width="20" height="20" src="${ctx}/static/images/yes.png"
                                                      onclick="changeTableVal('goods_category','id','1','is_show',this)"/>
                                             </td>
                                             <td>
@@ -192,11 +192,11 @@
                                                 </td>
                                                 <td><span>${gcv02.mobileName}</span></td>
                                                 <td>
-                                                    <img width="20" height="20" src="${ctx}/images/cancel.png"
+                                                    <img width="20" height="20" src="${ctx}/static/images/cancel.png"
                                                          onclick="changeTableVal('goods_category','id','12','is_hot',this)"/>
                                                 </td>
                                                 <td>
-                                                    <img width="20" height="20" src="${ctx}/images/yes.png"
+                                                    <img width="20" height="20" src="${ctx}/static/images/yes.png"
                                                          onclick="changeTableVal('goods_category','id','12','is_show',this)"/>
                                                 </td>
                                                 <td>
@@ -230,11 +230,11 @@
                                                     </td>
                                                     <td><span>${gcv03.mobileName}</span></td>
                                                     <td>
-                                                        <img width="20" height="20" src="${ctx}/images/cancel.png"
+                                                        <img width="20" height="20" src="${ctx}/static/images/cancel.png"
                                                              onclick="changeTableVal('goods_category','id','100','is_hot',this)"/>
                                                     </td>
                                                     <td>
-                                                        <img width="20" height="20" src="${ctx}/images/yes.png"
+                                                        <img width="20" height="20" src="${ctx}/static/images/yes.png"
                                                              onclick="changeTableVal('goods_category','id','100','is_show',this)"/>
                                                     </td>
                                                     <td>
