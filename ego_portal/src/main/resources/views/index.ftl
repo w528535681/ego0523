@@ -110,25 +110,10 @@
 <div id="doc">
     <div id="s_hdw">
 
-        <div id="s_tbar">
-            <div class="s_hd">
-                <div class="tbar_lft">您好，欢迎来到EGO商城！<a href="#">请登录</a> | <a href="#">免费注册</a></div>
-                <div class="tbar_rgt">
-                    <ul>
-                        <li class="first"><a href="#">我的订单</a></li>
-                        <li><a href="#">我的EGO商城</a></li>
-                        <li><a href="#">帮助中心</a></li>
-                        <li><a href="#">联系客服</a></li>
-                        <li><a href="#">加入收藏</a></li>
-                        <li class="s_tel_str">服务热线：</li>
-                        <li class="s_tel">400-009-1906</li>
-                    </ul>
-                </div>
-            </div>
-        </div><!--s_tbar end-->
+        <#include "common/welcome.ftl">
 
         <div class="s_hd nav">
-            <div id="s_logo"><a href="#"><img src="${ctx}/images/logo.png" border="0"/></a></div>
+            <div id="s_logo"><a href="#"><img src="${ctx}/static/images/logo.png" border="0"/></a></div>
             <div id="s_nav">
                 <ul>
                     <li class="first cur"><a href="#">首页</a><span></span></li>
@@ -146,7 +131,7 @@
                         <input name="searchStr" type="text" class="search-input"/>
                         <input name=""
                                type="image"
-                               src="${ctx}/images/btn_search.jpg"/>
+                               src="${ctx}/static/images/btn_search.jpg"/>
                     </form>
                 </div>
 
@@ -199,11 +184,11 @@
                     <div class="i_col_rgt_box">
 
                         <div class="i_slides" id="slideshow">
-                            <div class="i"><a href="#"><img src="${ctx}/images/slide-1.jpg"/></a></div>
-                            <div class="i"><a href="#"><img src="${ctx}/images/slide-2.jpg"/></a></div>
-                            <div class="i"><a href="#"><img src="${ctx}/images/slide-3.jpg"/></a></div>
-                            <div class="i"><a href="#"><img src="${ctx}/images/slide-4.jpg"/></a></div>
-                            <div class="i"><a href="#"><img src="${ctx}/images/slide-5.jpg"/></a></div>
+                            <div class="i"><a href="#"><img src="${ctx}/static/images/slide-1.jpg"/></a></div>
+                            <div class="i"><a href="#"><img src="${ctx}/static/images/slide-2.jpg"/></a></div>
+                            <div class="i"><a href="#"><img src="${ctx}/static/images/slide-3.jpg"/></a></div>
+                            <div class="i"><a href="#"><img src="${ctx}/static/images/slide-4.jpg"/></a></div>
+                            <div class="i"><a href="#"><img src="${ctx}/static/images/slide-5.jpg"/></a></div>
                         </div>
 
                         <div class="pbt10"></div>
@@ -213,14 +198,14 @@
                                 <div class="lft_icon"><a href="#"><span>pre</span></a></div>
                                 <div class="hot_list">
                                     <ul>
-                                        <li><a href="#"><img src="${ctx}/images/f1.jpg"/></a></li>
-                                        <li><a href="#"><img src="${ctx}/images/f2.jpg"/></a></li>
-                                        <li><a href="#"><img src="${ctx}/images/f3.jpg"/></a></li>
-                                        <li><a href="#"><img src="${ctx}/images/f4.jpg"/></a></li>
-                                        <li><a href="#"><img src="${ctx}/images/f5.jpg"/></a></li>
-                                        <li><a href="#"><img src="${ctx}/images/f6.jpg"/></a></li>
-                                        <li><a href="#"><img src="${ctx}/images/f7.jpg"/></a></li>
-                                        <li><a href="#"><img src="${ctx}/images/f8.jpg"/></a></li>
+                                        <li><a href="#"><img src="${ctx}/static/images/f1.jpg"/></a></li>
+                                        <li><a href="#"><img src="${ctx}/static/images/f2.jpg"/></a></li>
+                                        <li><a href="#"><img src="${ctx}/static/images/f3.jpg"/></a></li>
+                                        <li><a href="#"><img src="${ctx}/static/images/f4.jpg"/></a></li>
+                                        <li><a href="#"><img src="${ctx}/static/images/f5.jpg"/></a></li>
+                                        <li><a href="#"><img src="${ctx}/static/images/f6.jpg"/></a></li>
+                                        <li><a href="#"><img src="${ctx}/static/images/f7.jpg"/></a></li>
+                                        <li><a href="#"><img src="${ctx}/static/images/f8.jpg"/></a></li>
                                     </ul>
                                 </div>
                                 <div class="rgt_icon"><a href="#"><span>Nexr</span></a></div>
@@ -261,9 +246,9 @@
                 <div class="i_col_lft">
                     <div class="i_lads">
                         <ul>
-                            <li><a href="#"><img src="${ctx}/images/lad1.jpg"/></a></li>
-                            <li><a href="#"><img src="${ctx}/images/lad2.jpg"/></a></li>
-                            <li><a href="#"><img src="${ctx}/images/lad3.jpg"/></a></li>
+                            <li><a href="#"><img src="${ctx}/static/images/lad1.jpg"/></a></li>
+                            <li><a href="#"><img src="${ctx}/static/images/lad2.jpg"/></a></li>
+                            <li><a href="#"><img src="${ctx}/static/images/lad3.jpg"/></a></li>
                         </ul>
                     </div>
                 </div>
@@ -284,7 +269,7 @@
                                             <ul>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg1-1.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg1-1.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">伊宝爬行垫大号 伊宝动物乐园便携爬行</a></div>
                                                         <div class="sprice">特价：<span>¥69</span></div>
@@ -292,7 +277,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg1-2.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg1-2.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">清风纤巧装2层100抽面纸*5包</a></div>
                                                         <div class="sprice">特价：<span>¥9.5</span></div>
@@ -300,7 +285,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg1-3.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg1-3.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">TCL滚筒洗衣机 XQG60-601AS</a></div>
                                                         <div class="sprice">特价：<span>¥1598<span></div>
@@ -308,7 +293,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg1-4.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg1-4.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">云南蒙自纸皮薄皮石榴 皮薄果肉细嫰</a></div>
                                                         <div class="sprice">特价：<span>¥65<span></div>
@@ -322,7 +307,7 @@
                                             <ul>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg2-1.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg2-1.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">乐扣乐扣 树叶百纳箱（55L）LLB51</a></div>
                                                         <div class="sprice">特价：<span>¥59</span></div>
@@ -330,7 +315,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg2-2.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg2-2.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">昂立多邦礼罐特惠组合特价125元（8包）</a></div>
                                                         <div class="sprice">特价：<span>¥125</span></div>
@@ -338,7 +323,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg2-3.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg2-3.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">贝亲 滋润型润肤霜35g</a></div>
                                                         <div class="sprice">特价：<span>¥18.9<span></div>
@@ -346,7 +331,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg2-4.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg2-4.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">好奇干爽舒适纸尿裤S小号 14片/包 赠品变动</a>
                                                         </div>
@@ -361,7 +346,7 @@
                                             <ul>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg3-1.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg3-1.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">休闲饼干DIY 10.8元选3件</a></div>
                                                         <div class="sprice">特价：<span>¥3.6</span></div>
@@ -369,7 +354,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg3-2.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg3-2.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">L'OREAL欧莱雅清润全日保湿水精华凝露 </a></div>
                                                         <div class="sprice">特价：<span>¥90</span></div>
@@ -377,7 +362,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg3-3.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg3-3.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">5830升级版跌破2000，还不来抢！</a></div>
                                                         <div class="sprice">特价：<span>¥1998<span></div>
@@ -385,7 +370,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg3-4.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg3-4.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">智多熊 早教益智玩具v15</a></div>
                                                         <div class="sprice">特价：<span>¥99<span></div>
@@ -399,7 +384,7 @@
                                             <ul>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg4-1.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg4-1.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">【满200减60】 Lansiwear 浪氏威尔</a>
                                                         </div>
@@ -408,7 +393,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg4-2.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg4-2.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">李宁全场3折起，满199送T恤</a></div>
                                                         <div class="sprice">特价：<span>¥129</span></div>
@@ -416,7 +401,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg4-3.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg4-3.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">闽龙达 嫩香菇200g</a></div>
                                                         <div class="sprice">特价：<span>¥56.5<span></div>
@@ -424,7 +409,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="cat_pd">
-                                                        <div class="pic"><a href="#"><img src="${ctx}/images/qg4-4.jpg"
+                                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/qg4-4.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">鲜得味天然泉水金枪鱼180g/罐（泰国）</a></div>
                                                         <div class="sprice">特价：<span>¥14.5<span></div>
@@ -449,7 +434,7 @@
                                             <div class="sprice">¥<span>308</span></div>
                                             <div class="lprice">¥<span>688</span></div>
                                         </div>
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/tg1.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/tg1.jpg" border="0"/></a></div>
                                     </div>
                                     <div class="i_tg_buynums">已有<span>102</span>个人购买</div>
                                 </div>
@@ -460,7 +445,7 @@
                 </div>
             </div>
 
-            <div class="banner2 ptt10 cf"><a href="#"><img src="${ctx}/images/banner1.jpg" border="0"/></a></div>
+            <div class="banner2 ptt10 cf"><a href="#"><img src="${ctx}/static/images/banner1.jpg" border="0"/></a></div>
 
             <div id="channel_0" class="i_channels cf">
                 <div class="i_channels_tit">
@@ -484,7 +469,7 @@
 
                 <div class="i_channels_cont">
                     <div class="channel_lft">
-                        <div class="big_ad_box"><a href="#"><img src="${ctx}/images/cat_ad1.jpg" border="0"/></a></div>
+                        <div class="big_ad_box"><a href="#"><img src="${ctx}/static/images/cat_ad1.jpg" border="0"/></a></div>
                     </div>
 
                     <div class="channel_mid">
@@ -492,7 +477,7 @@
                             <ul>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/pd_1_1.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/pd_1_1.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">太平 加铁梳打奶盐口味400g 19元选2件</a></div>
                                         <div class="list_price">¥11.9</div>
                                         <div class="price">¥9.9</div>
@@ -500,7 +485,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/pd_1_2.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/pd_1_2.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">农夫山泉 维他命水美丽速度(石榴蓝莓风</a></div>
                                         <div class="list_price">¥30</div>
                                         <div class="price">¥20.8</div>
@@ -508,7 +493,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/pd_1_3.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/pd_1_3.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">丝宝宝 茶树菇145g/袋</a></div>
                                         <div class="list_price">¥26.5</div>
                                         <div class="price">¥20.4</div>
@@ -516,7 +501,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/pd_1_4.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/pd_1_4.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">梅林 午餐肉罐头 340g/罐</a></div>
                                         <div class="list_price">¥14.5</div>
                                         <div class="price">¥12.5</div>
@@ -529,9 +514,9 @@
                     <div class="channel_rgt">
                         <div class="small_ad_box">
                             <ul>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad1.jpg" border="0"/></a></li>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad2.jpg" border="0"/></a></li>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad3.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad1.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad2.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad3.jpg" border="0"/></a></li>
                             </ul>
                         </div>
                     </div>
@@ -563,14 +548,14 @@
 
                 <div class="i_channels_cont">
                     <div class="channel_lft">
-                        <div class="big_ad_box"><a href="#"><img src="${ctx}/images/cat_ad2.jpg" border="0"/></a></div>
+                        <div class="big_ad_box"><a href="#"><img src="${ctx}/static/images/cat_ad2.jpg" border="0"/></a></div>
                     </div>
                     <div class="channel_mid">
                         <div class="cat_list_box">
                             <ul>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat2-1.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat2-1.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">膜法世家1908 樱桃(车厘子)睡眠面膜100g</a></div>
                                         <div class="list_price">¥186</div>
                                         <div class="price">¥116</div>
@@ -578,7 +563,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat2-2.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat2-2.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">凌仕魅动男士香氛-契合</a></div>
                                         <div class="list_price">¥59</div>
                                         <div class="price">¥52.9</div>
@@ -586,7 +571,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat2-3.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat2-3.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">多芬日常损伤理护洗发乳400ml+润发精华素</a></div>
                                         <div class="list_price">¥65</div>
                                         <div class="price">¥55</div>
@@ -594,7 +579,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat2-4.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat2-4.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">德国爱姬玛琳经典香水沐浴露(100%原装进</a></div>
                                         <div class="list_price">¥58</div>
                                         <div class="price">¥38.6</div>
@@ -607,11 +592,11 @@
                     <div class="channel_rgt">
                         <div class="small_ad_box">
                             <ul>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_2-1.jpg" width="208" height="63" border="0"/></a>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_2-1.jpg" width="208" height="63" border="0"/></a>
                                 </li>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_2-2.jpg" width="208" height="63" border="0"/></a>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_2-2.jpg" width="208" height="63" border="0"/></a>
                                 </li>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad_2_3.jpg" width="203" height="98" border="0"/></a>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad_2_3.jpg" width="203" height="98" border="0"/></a>
                                 </li>
                             </ul>
                         </div>
@@ -643,7 +628,7 @@
 
                 <div class="i_channels_cont">
                     <div class="channel_lft">
-                        <div class="big_ad_box"><a href="#"><img src="${ctx}/images/cat_ad3.jpg" border="0"/></a></div>
+                        <div class="big_ad_box"><a href="#"><img src="${ctx}/static/images/cat_ad3.jpg" border="0"/></a></div>
                     </div>
 
                     <div class="channel_mid">
@@ -651,7 +636,7 @@
                             <ul>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat3-1.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat3-1.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">太平 加铁梳打奶盐口味400g 19元选2件</a></div>
                                         <div class="list_price">¥11.9</div>
                                         <div class="price">¥9.9</div>
@@ -659,7 +644,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat3-2.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat3-2.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">农夫山泉 维他命水美丽速度(石榴蓝莓风</a></div>
                                         <div class="list_price">¥30</div>
                                         <div class="price">¥20.8</div>
@@ -667,7 +652,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat3-3.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat3-3.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">丝宝宝 茶树菇145g/袋</a></div>
                                         <div class="list_price">¥26.5</div>
                                         <div class="price">¥20.4</div>
@@ -675,7 +660,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat3-4.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat3-4.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">梅林 午餐肉罐头 340g/罐</a></div>
                                         <div class="list_price">¥14.5</div>
                                         <div class="price">¥12.5</div>
@@ -688,9 +673,9 @@
                     <div class="channel_rgt">
                         <div class="small_ad_box">
                             <ul>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad3-1.jpg" border="0"/></a></li>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad3-2.jpg" border="0"/></a></li>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad3-3.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad3-1.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad3-2.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad3-3.jpg" border="0"/></a></li>
                             </ul>
                         </div>
                     </div>
@@ -720,7 +705,7 @@
 
                 <div class="i_channels_cont">
                     <div class="channel_lft">
-                        <div class="big_ad_box"><a href="#"><img src="${ctx}/images/cat_ad4.jpg" border="0"/></a></div>
+                        <div class="big_ad_box"><a href="#"><img src="${ctx}/static/images/cat_ad4.jpg" border="0"/></a></div>
                     </div>
 
                     <div class="channel_mid">
@@ -728,7 +713,7 @@
                             <ul>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat4-1.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat4-1.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">太平 加铁梳打奶盐口味400g 19元选2件</a></div>
                                         <div class="list_price">¥11.9</div>
                                         <div class="price">¥9.9</div>
@@ -736,7 +721,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat4-2.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat4-2.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">农夫山泉 维他命水美丽速度(石榴蓝莓风</a></div>
                                         <div class="list_price">¥30</div>
                                         <div class="price">¥20.8</div>
@@ -744,7 +729,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat4-3.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat4-3.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">丝宝宝 茶树菇145g/袋</a></div>
                                         <div class="list_price">¥26.5</div>
                                         <div class="price">¥20.4</div>
@@ -752,7 +737,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/cat4-4.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/cat4-4.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">梅林 午餐肉罐头 340g/罐</a></div>
                                         <div class="list_price">¥14.5</div>
                                         <div class="price">¥12.5</div>
@@ -765,9 +750,9 @@
                     <div class="channel_rgt">
                         <div class="small_ad_box">
                             <ul>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad4-1.jpg" border="0"/></a></li>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad4-2.jpg" border="0"/></a></li>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad4-3.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad4-1.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad4-2.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad4-3.jpg" border="0"/></a></li>
                             </ul>
                         </div>
                     </div>
@@ -797,7 +782,7 @@
 
                 <div class="i_channels_cont">
                     <div class="channel_lft">
-                        <div class="big_ad_box"><a href="#"><img src="${ctx}/images/cat_ad5.jpg" border="0"/></a></div>
+                        <div class="big_ad_box"><a href="#"><img src="${ctx}/static/images/cat_ad5.jpg" border="0"/></a></div>
                     </div>
 
                     <div class="channel_mid">
@@ -805,7 +790,7 @@
                             <ul>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/pd_1_1.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/pd_1_1.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">太平 加铁梳打奶盐口味400g 19元选2件</a></div>
                                         <div class="list_price">¥11.9</div>
                                         <div class="price">¥9.9</div>
@@ -813,7 +798,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/pd_1_2.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/pd_1_2.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">农夫山泉 维他命水美丽速度(石榴蓝莓风</a></div>
                                         <div class="list_price">¥30</div>
                                         <div class="price">¥20.8</div>
@@ -821,7 +806,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/pd_1_3.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/pd_1_3.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">丝宝宝 茶树菇145g/袋</a></div>
                                         <div class="list_price">¥26.5</div>
                                         <div class="price">¥20.4</div>
@@ -829,7 +814,7 @@
                                 </li>
                                 <li>
                                     <div class="cat_pd">
-                                        <div class="pic"><a href="#"><img src="${ctx}/images/pd_1_4.jpg" border="0"/></a></div>
+                                        <div class="pic"><a href="#"><img src="${ctx}/static/images/pd_1_4.jpg" border="0"/></a></div>
                                         <div class="ptitle"><a href="#">梅林 午餐肉罐头 340g/罐</a></div>
                                         <div class="list_price">¥14.5</div>
                                         <div class="price">¥12.5</div>
@@ -842,9 +827,9 @@
                     <div class="channel_rgt">
                         <div class="small_ad_box">
                             <ul>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad5-1.jpg" border="0"/></a></li>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad5-2.jpg" border="0"/></a></li>
-                                <li><a href="#"><img src="${ctx}/images/cat_s_ad5-3.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad5-1.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad5-2.jpg" border="0"/></a></li>
+                                <li><a href="#"><img src="${ctx}/static/images/cat_s_ad5-3.jpg" border="0"/></a></li>
                             </ul>
                         </div>
                     </div>
@@ -925,18 +910,18 @@
             <div class="ft_suggest pt100">请帮助我们提高！<a href="#">商城首页意见反馈</a></div>
             <div class="ft_banners1 tac pbt10">
                 <ul>
-                    <li><a href="#"><img src="${ctx}/images/ft_1.gif" border="0"/></a></li>
-                    <li><a href="#"><img src="${ctx}/images/ft_2.gif" border="0"/></a></li>
-                    <li><a href="#"><img src="${ctx}/images/ft_3.gif" border="0"/></a></li>
+                    <li><a href="#"><img src="${ctx}/static/images/ft_1.gif" border="0"/></a></li>
+                    <li><a href="#"><img src="${ctx}/static/images/ft_2.gif" border="0"/></a></li>
+                    <li><a href="#"><img src="${ctx}/static/images/ft_3.gif" border="0"/></a></li>
                 </ul>
             </div>
             <div class="copyright tac pbt10">版权所有 Copyright&copy; EGO商城 All Rights Reserved 版权所有</div>
             <div class="ft_banners2 tac">
                 <ul>
-                    <li><a href="#"><img src="${ctx}/images/u255.png" border="0"/></a></li>
-                    <li><a href="#"><img src="${ctx}/images/u257.png" border="0"/></a></li>
-                    <li><a href="#"><img src="${ctx}/images/u259.png" border="0"/></a></li>
-                    <li><a href="#"><img src="${ctx}/images/u261.png" border="0"/></a></li>
+                    <li><a href="#"><img src="${ctx}/static/images/u255.png" border="0"/></a></li>
+                    <li><a href="#"><img src="${ctx}/static/images/u257.png" border="0"/></a></li>
+                    <li><a href="#"><img src="${ctx}/static/images/u259.png" border="0"/></a></li>
+                    <li><a href="#"><img src="${ctx}/static/images/u261.png" border="0"/></a></li>
                 </ul>
             </div>
         </div>

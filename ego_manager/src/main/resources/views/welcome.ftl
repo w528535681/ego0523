@@ -13,7 +13,7 @@
         }
     </style>
     <meta name="__hash__" content="6f2f83477e27fc132fe9427e851ef6a0_f98429bc72657fc38860af448bf30e91" />
-    <script src="${ctx}/js/welcome.js"></script>
+    <script src="${ctx}/static/js/welcome.js"></script>
 
   </head>
 <body style="background-color:#ecf0f5;">

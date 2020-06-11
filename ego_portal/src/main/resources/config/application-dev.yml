@@ -110,3 +110,6 @@ management:
     elasticsearch:
       enabled: false
 
+#用户票据key
+user.ticket: user:userTicket
+
