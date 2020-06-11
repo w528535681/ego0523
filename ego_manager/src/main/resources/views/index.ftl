@@ -26,27 +26,31 @@
         <!--服务器升级-->
         <textarea id="textarea_upgrade" style="display:none;"></textarea>                              
         <div class="navbar-custom-menu">
-          <ul class="nav navbar-nav">
-           <li class="dropdown user user-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <!--  <img src="${ctx}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
-                <i class="glyphicon glyphicon-user"></i>
-                <span class="hidden-xs">欢迎：admin</span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="user-footer">
-                  <div class="pull-left">
-                  	<a href="/index/Admin/Index/index" data-url="" class="btn btn-default btn-flat model-map">后台首页</a>
-                   	<a href="修改密码.html" target="rightContent" class="btn btn-default btn-flat">修改密码</a>
-                   	<a href="/index/Admin/Admin/logout" class="btn btn-default btn-flat">安全退出</a>
-                  </div>
-                </li>
-              </ul>
-            </li>
-			<li><a href="">安全退出</a></li>
-            <!-- Control Sidebar Toggle Button -->
-            <li><a href="#" data-toggle="control-sidebar"><i class="fa fa-street-view"></i>换肤</a></li>
-          </ul>
+			<ul class="nav navbar-nav">
+				<li class="dropdown user user-menu">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<!-- <img src="${ctx}/dist/img/user2-160x160.jpg"
+class="user-image" alt="User Image">-->
+						<i class="glyphicon glyphicon-user"></i>
+						<span class="hidden-xs">欢迎：${user.userName}</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li class="user-footer">
+							<div class="pull-left">
+								<a href="/index/Admin/Index/index" data-url=""
+								   class="btn btn-default btn-flat model-map">后
+									台首页</a>
+								<a href="修改密码.html" target="rightContent"
+								   class="btn btn-default btn-flat">修改密码</a>
+								<a href="/index/Admin/Admin/logout" class="btn btn-default btn-flat">安全退出</a>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li><a href="${ctx}/user/logout">安全退出</a></li>
+				<!-- Control Sidebar Toggle Button -->
+				<li><a href="#" data-toggle="control-sidebar"><i class="fa fastreet-view"></i>换肤</a></li>
+			</ul>
         </div>
      </nav>
 </header> 

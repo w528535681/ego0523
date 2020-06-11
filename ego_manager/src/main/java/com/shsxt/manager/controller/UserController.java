@@ -54,4 +54,27 @@ public class UserController {
         request.getSession().setAttribute("user",admin);
         return result?BaseResult.success():BaseResult.error();
     }
+
+    /**
+     * 用户退出
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping("logout")
+    public String logout(HttpServletRequest request,HttpServletResponse response){
+
+        //通过request拿cookie的值，就是用户的ticket
+        String ticket = cookieService.getCookie(request);
+        ////如果ticket不为空
+        if (!StringUtils.isEmpty(ticket)){
+            //清楚redis
+            ssoService.logout(ticket);
+            //清楚session
+            request.getSession().removeAttribute("user");
+            //清除cookie
+            cookieService.deleteCookie(request,response);
+        }
+        return "login";
+    }
 }
