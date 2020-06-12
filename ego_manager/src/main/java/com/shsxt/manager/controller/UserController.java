@@ -2,6 +2,7 @@ package com.shsxt.manager.controller;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.shsxt.common.enums.BaseResultEnum;
 import com.shsxt.common.result.BaseResult;
 import com.shsxt.manager.service.CookieService;
 import com.shsxt.sso.pojo.Admin;
@@ -37,10 +38,15 @@ public class UserController {
      */
     @RequestMapping("login")
     @ResponseBody
-    public BaseResult login(Admin admin, HttpServletRequest request, HttpServletResponse response){
-        //String pictureVerifyKey = (String) request.getSession().getAttribute("pictureVerifyKey");
-        //BaseResult baseResult = new BaseResult();
+    public BaseResult login(Admin admin, HttpServletRequest request, HttpServletResponse response,String verify){
+        String pictureVerifyKey = (String) request.getSession().getAttribute("pictureVerifyKey");
+        BaseResult baseResult = new BaseResult();
         //验证码为空或者不正确
+        if (StringUtils.isEmpty(verify) || !verify.trim().equals(pictureVerifyKey)) {
+            baseResult.setCode(BaseResultEnum.PASS_ERROR_03.getCode());
+            baseResult.setMessage(BaseResultEnum.PASS_ERROR_03.getMessage());
+            return baseResult;
+        }
 
         //去单点登录系统验证用户信息返回票据信息
         String ticket = ssoService.login(admin);

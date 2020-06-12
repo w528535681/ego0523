@@ -97,6 +97,12 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-pool2</artifactId>
     </dependency>
+
+    <!-- google kaptcha验证码 -->
+    <dependency>
+      <groupId>com.github.axet</groupId>
+      <artifactId>kaptcha</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

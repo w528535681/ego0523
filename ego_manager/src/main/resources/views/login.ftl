@@ -50,11 +50,13 @@
             <opinioncontrol realtime="true" opinion_name="vertify_code" default="true">
                 <div class="row" style="padding-right: 65px;">
                     <div class="col-xs-8">
-                        <input style="width: 135px" type="text" name="vertify" id="vertify" class="form-control"
+                        <input style="width: 135px" type="text" name="vertify"
+                               id="vertify" class="form-control"
                                placeholder="验证码"/>
                     </div>
                     <div class="col-xs-4">
-                        <img id="imgVerify" style="cursor:pointer;" src="${ctx}/static/images/vertify.png"
+                        <img id="imgVerify" style="cursor:pointer;"
+                             src="${ctx}/image/getKaptchaImage"
                              alt="点击更换" title="点击更换"/>
                     </div>
                 </div>
@@ -105,11 +107,9 @@
         }
     }
 
-
     $(function () {
         getKaptchaImage();
     });
-
     //点击更换验证码
     function getKaptchaImage() {
         $("#imgVerify").on("click", function () {
@@ -120,19 +120,38 @@
 
     // 用户登录
     function userLogin() {
+        // 必须输入用户名、密码、验证码
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var vertify = $("#vertify").val();
+        if (undefined == username || "" == username) {
+            layer.alert("请输入用户名！");
+            return;
+        }
+        if (undefined == password || "" == password) {
+            layer.alert("请输入密码！");
+            return;
+        }
+        if (undefined == vertify || "" == vertify) {
+            layer.alert("请输入验证码！");
+            return;
+        }
         $.ajax({
             url: "${ctx}/user/login",
             type: "POST",
             data: {
-                userName: $("#username").val(),
-                password: $("#password").val()
+                userName: username,
+                password: password,
+                verify: vertify
             },
             dataType: "JSON",
             success: function (result) {
                 if (200 == result.code) {
                     location.href = "${ctx}/index";
                 } else {
-                    layer.alert("用户名或密码错误，请重新输入！");
+                    // 模拟点击事件行为
+                    $("#imgVerify").trigger("click");
+                    layer.alert(result.message);
                 }
             },
             error: function () {
