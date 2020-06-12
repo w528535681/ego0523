@@ -1,4 +1,4 @@
-package com.shsxt.sso.pojo;
+package com.shsxt.common.pojo;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -9,6 +9,7 @@
         var closetimer = 0;
         var ddmenuitem = 0;
 
+
         $(document).ready(function () {
             /* ----------鼠标移入移出事件---begin------- */
             $('.cat_item').mousemove(function () {
@@ -18,7 +19,7 @@
                 $(this).removeClass('cat_item_on');
             });
             /* ----------鼠标移入移出事件-----end------- */
-            $('#slideshow').imgSlideShow({itemclass: 'i'})
+            $('#slideshow').imgSlideShow({itemclass: 'i'});
             $("#slide-qg").switchTab({titCell: "dt a", trigger: "mouseover", delayTime: 0});
             $("#s_cart_nums1").hover(function () {
                 mcancelclosetime();
@@ -29,80 +30,81 @@
                 mclosetime();
             });
             $("#s_cart_nums2").hover(function () {
-            $("#s_cart_nums2").hover(function () {
-                mcancelclosetime();
+                $("#s_cart_nums2").hover(function () {
+                    mcancelclosetime();
+                    if (ddmenuitem) ddmenuitem.hide();
+                    ddmenuitem = $(document).find("#s_cartbox");
+                    ddmenuitem.fadeIn();
+                }, function () {
+                    mclosetime();
+                });
+                $("#s_cartbox").hover(function () {
+                    mcancelclosetime();
+                }, function () {
+                    mclosetime();
+                });
+                var $cur = 1;
+                var $i = 4;
+                var $len = $('.hot_list>ul>li').length;
+                var $pages = Math.ceil($len / $i);
+                var $w = $('.hotp').width() - 66;
+
+                var $showbox = $('.hot_list');
+
+                var $pre = $('div.left_icon');
+                var $next = $('div.rgt_icon');
+
+                $pre.click(function () {
+                    if (!$showbox.is(':animated')) {
+                        if ($cur == 1) {
+                            $showbox.animate({
+                                left: '-=' + $w * ($pages - 1)
+                            }, 500);
+                            $cur = $pages;
+                        } else {
+                            $showbox.animate({
+                                left: '+=' + $w
+                            }, 500);
+                            $cur--;
+                        }
+
+                    }
+                });
+
+                $next.click(function () {
+                    if (!$showbox.is(':animated')) {
+                        if ($cur == $pages) {
+                            $showbox.animate({
+                                left: 0
+                            }, 500);
+                            $cur = 1;
+                        } else {
+                            $showbox.animate({
+                                left: '-=' + $w
+                            }, 500);
+                            $cur++;
+                        }
+
+                    }
+                });
+
+            });
+
+            function mclose() {
                 if (ddmenuitem) ddmenuitem.hide();
-                ddmenuitem = $(document).find("#s_cartbox");
-                ddmenuitem.fadeIn();
-            }, function () {
-                mclosetime();
-            });
-            $("#s_cartbox").hover(function () {
-                mcancelclosetime();
-            }, function () {
-                mclosetime();
-            });
-            var $cur = 1;
-            var $i = 4;
-            var $len = $('.hot_list>ul>li').length;
-            var $pages = Math.ceil($len / $i);
-            var $w = $('.hotp').width() - 66;
-
-            var $showbox = $('.hot_list');
-
-            var $pre = $('div.left_icon');
-            var $next = $('div.rgt_icon');
-
-            $pre.click(function () {
-                if (!$showbox.is(':animated')) {
-                    if ($cur == 1) {
-                        $showbox.animate({
-                            left: '-=' + $w * ($pages - 1)
-                        }, 500);
-                        $cur = $pages;
-                    } else {
-                        $showbox.animate({
-                            left: '+=' + $w
-                        }, 500);
-                        $cur--;
-                    }
-
-                }
-            });
-
-            $next.click(function () {
-                if (!$showbox.is(':animated')) {
-                    if ($cur == $pages) {
-                        $showbox.animate({
-                            left: 0
-                        }, 500);
-                        $cur = 1;
-                    } else {
-                        $showbox.animate({
-                            left: '-=' + $w
-                        }, 500);
-                        $cur++;
-                    }
-
-                }
-            });
-
-        });
-
-        function mclose() {
-            if (ddmenuitem) ddmenuitem.hide();
-        }
-
-        function mclosetime() {
-            closetimer = window.setTimeout(mclose, timeout);
-        }
-
-        function mcancelclosetime() {
-            if (closetimer) {
-                window.clearTimeout(closetimer);
-                closetimer = null;
             }
-        }
+
+            function mclosetime() {
+                closetimer = window.setTimeout(mclose, timeout);
+            }
+
+            function mcancelclosetime() {
+                if (closetimer) {
+                    window.clearTimeout(closetimer);
+                    closetimer = null;
+                }
+            }
+        })
     </script>
 </head>
 
@@ -150,14 +152,7 @@
                     </ul>
                 </div>
 
-                <div id="s_cart">
-                    <ul>
-                        <li class="nums"><a href="" id="s_cart_nums1">购物车： <span>0</span> 件</a> <a href="" class="btn"
-                                                                                                   id="s_cart_nums2"></a>
-                        </li>
-                        <li class="checkout"><a href="#">去结算>></a></li>
-                    </ul>
-                </div>
+               <#include "common/cart.ftl">
 
                 <div id="s_cartbox" class="s_cartbox">您的购物车中暂无商品，赶快选择心爱的商品吧！</div>
 
@@ -288,7 +283,7 @@
                                                         <div class="pic"><a href="#"><img src="${ctx}/static/images/qg1-3.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">TCL滚筒洗衣机 XQG60-601AS</a></div>
-                                                        <div class="sprice">特价：<span>¥1598<span></div>
+                                                        <div class="sprice">特价：<span>¥1598</span></div>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -296,7 +291,7 @@
                                                         <div class="pic"><a href="#"><img src="${ctx}/static/images/qg1-4.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">云南蒙自纸皮薄皮石榴 皮薄果肉细嫰</a></div>
-                                                        <div class="sprice">特价：<span>¥65<span></div>
+                                                        <div class="sprice">特价：<span>¥65</span></div>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -326,7 +321,7 @@
                                                         <div class="pic"><a href="#"><img src="${ctx}/static/images/qg2-3.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">贝亲 滋润型润肤霜35g</a></div>
-                                                        <div class="sprice">特价：<span>¥18.9<span></div>
+                                                        <div class="sprice">特价：<span>¥18.9</span></div>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -335,7 +330,7 @@
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">好奇干爽舒适纸尿裤S小号 14片/包 赠品变动</a>
                                                         </div>
-                                                        <div class="sprice">特价：<span>¥12.8<span></div>
+                                                        <div class="sprice">特价：<span>¥12.8</span></div>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -365,7 +360,7 @@
                                                         <div class="pic"><a href="#"><img src="${ctx}/static/images/qg3-3.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">5830升级版跌破2000，还不来抢！</a></div>
-                                                        <div class="sprice">特价：<span>¥1998<span></div>
+                                                        <div class="sprice">特价：<span>¥1998</span></div>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -373,7 +368,7 @@
                                                         <div class="pic"><a href="#"><img src="${ctx}/static/images/qg3-4.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">智多熊 早教益智玩具v15</a></div>
-                                                        <div class="sprice">特价：<span>¥99<span></div>
+                                                        <div class="sprice">特价：<span>¥99</span></div>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -404,7 +399,7 @@
                                                         <div class="pic"><a href="#"><img src="${ctx}/static/images/qg4-3.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">闽龙达 嫩香菇200g</a></div>
-                                                        <div class="sprice">特价：<span>¥56.5<span></div>
+                                                        <div class="sprice">特价：<span>¥56.5</span></div>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -412,7 +407,7 @@
                                                         <div class="pic"><a href="#"><img src="${ctx}/static/images/qg4-4.jpg"
                                                                                           border="0"/></a></div>
                                                         <div class="ptitle"><a href="#">鲜得味天然泉水金枪鱼180g/罐（泰国）</a></div>
-                                                        <div class="sprice">特价：<span>¥14.5<span></div>
+                                                        <div class="sprice">特价：<span>¥14.5</span></div>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -929,6 +924,25 @@
     </div><!--s_ftw end-->
 
 </div>
+
+<!-- 搜索商品结果模板 -->
+<script type="template" id="goodsTemplate">
+    {{ for(var i = 0; i < it.length; i++){ }}
+    <li>
+        <a href="#"><img src="{{=it[i].originalImg}}" width="170" height="160" alt=""/></a>
+        <dl>
+            <dt><a href="#">{{=it[i].goodsNameHl}}</a></dt>
+            <dd>特价：<strong class="red">￥{{=it[i].marketPrice}}</strong></dd>
+            <dd><span class="startotal"></span></dd>
+            <dd><a class="addcat" href="javascript:void(0);"
+                   onclick="addToCart('{{=it[i].goodsId}}', '{{=it[i].goodsName}}', '{{=it[i].marketPrice}}', '{{=it[i].originalImg}}');">加入购物车</a>
+            </dd>
+        </dl>
+    </li>
+    {{ } }}
+</script>
+
+
 <!-- 编写模板 -->
 <script type="template" id="goodsCategoryTemplate">
     {{ for(var i = 0; i < it.length; i++){ }}
@@ -1029,7 +1043,12 @@
                 layer.msg("亲，系统正在升级中，请稍后再试！");
             }
         });
-    }
+    };
+
+
+
+
+
 </script>
 </body>
 </html>

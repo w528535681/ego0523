@@ -1,8 +1,8 @@
 package com.shsxt.sso.mapper;
 
-import com.shsxt.sso.pojo.Admin;
-import com.shsxt.sso.pojo.AdminExample;
-import com.shsxt.sso.pojo.AdminWithBLOBs;
+import com.shsxt.common.pojo.Admin;
+import com.shsxt.common.pojo.AdminExample;
+import com.shsxt.common.pojo.AdminWithBLOBs;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -841,6 +841,7 @@
                                                     <li><a href="#">Supor 苏泊尔</a></li>
                                                     <li><a href="#">妙洁</a></li>
                                                     <li><a href="#">奥妙</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                         <dl>
@@ -851,6 +852,7 @@
                                                     <li><a href="#">厨房清洁全攻略</a></li>
                                                     <li><a href="#">洁云赠品大放送</a></li>
                                                     <li><a href="#">一次性用品抄底价</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                     </div>
@@ -962,6 +964,7 @@
                                                     <li><a href="#">卡西欧</a></li>
                                                     <li><a href="#">铁三角</a></li>
                                                     <li><a href="#">爱国者</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                         <dl>
@@ -972,6 +975,7 @@
                                                     <li><a href="#">“清仓价”电纸书大放</a></li>
                                                     <li><a href="#">单反镜头随心配，搭出</a></li>
                                                     <li><a href="#">数码相机，跳楼价清仓</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                     </div>
@@ -1092,6 +1096,7 @@
                                                     <li><a href="#">格兰仕</a></li>
                                                     <li><a href="#">博朗</a></li>
                                                     <li><a href="#">九阳</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                         <dl>
@@ -1102,6 +1107,7 @@
                                                     <li><a href="#">冰洗直降，步步惊喜！</a></li>
                                                     <li><a href="#">液晶电视清仓大放价，</a></li>
                                                     <li><a href="#">小家电惠战十月，最低</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                     </div>
@@ -1268,6 +1274,7 @@
                                                     <li><a href="#">易达</a></li>
                                                     <li><a href="#">惠普</a></li>
                                                     <li><a href="#">智高</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                     </div>
@@ -1404,6 +1411,7 @@
                                                     <li><a href="#">华润家纺</a></li>
                                                     <li><a href="#">御灵珠宝</a></li>
                                                     <li><a href="#">安美驰</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                         <dl>
@@ -1414,6 +1422,7 @@
                                                     <li><a href="#">华润家纺买赠特促</a></li>
                                                     <li><a href="#">御灵珠宝登入EGO</a></li>
                                                     <li><a href="#">婚庆开始了</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                     </div>
@@ -1552,6 +1561,7 @@
                                                     <li><a href="#">小企鹅</a></li>
                                                     <li><a href="#">乐乐趣</a></li>
                                                     <li><a href="#">毛毛仔</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                         <dl>
@@ -1562,6 +1572,7 @@
                                                     <li><a href="#">三大品牌遥控玩具特卖</a></li>
                                                     <li><a href="#">乐高超低价</a></li>
                                                     <li><a href="#">费雪 乐高 皇室联合让</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                     </div>
@@ -1654,6 +1665,7 @@
                                                     <li><a href="#">保罗威特</a></li>
                                                     <li><a href="#">Tomnrabbit</a></li>
                                                     <li><a href="#">JAMESKING</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                         <dl>
@@ -1664,6 +1676,7 @@
                                                     <li><a href="#">卡帝乐清仓 2折起</a></li>
                                                     <li><a href="#">牛仔裤热卖 69元起</a></li>
                                                     <li><a href="#">佐丹奴旗舰店</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                     </div>
@@ -1793,6 +1806,7 @@
                                                     <li><a href="#">lumi</a></li>
                                                     <li><a href="#">膳通</a></li>
                                                     <li><a href="#">修身堂</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                         <dl>
@@ -1803,6 +1817,7 @@
                                                     <li><a href="#">保健品滋补人气排行</a></li>
                                                     <li><a href="#">情趣用品系列</a></li>
                                                     <li><a href="#">雅姿饼干买3送1</a></li>
+                                                </ul>
                                             </dd>
                                         </dl>
                                     </div>

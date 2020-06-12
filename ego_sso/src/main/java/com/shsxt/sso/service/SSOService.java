@@ -1,6 +1,6 @@
 package com.shsxt.sso.service;
 
-import com.shsxt.sso.pojo.Admin;
+import com.shsxt.common.pojo.Admin;
 
 /**
  * 单点登录

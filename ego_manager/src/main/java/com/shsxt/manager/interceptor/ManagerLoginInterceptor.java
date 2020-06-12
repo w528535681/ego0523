@@ -2,7 +2,7 @@ package com.shsxt.manager.interceptor;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.shsxt.common.util.CookieUtil;
-import com.shsxt.sso.pojo.Admin;
+import com.shsxt.common.pojo.Admin;
 import com.shsxt.sso.service.SSOService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

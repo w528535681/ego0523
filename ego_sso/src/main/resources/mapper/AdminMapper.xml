@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shsxt.sso.mapper.AdminMapper">
-  <resultMap id="BaseResultMap" type="com.shsxt.sso.pojo.Admin">
+  <resultMap id="BaseResultMap" type="com.shsxt.common.pojo.Admin">
     <id column="admin_id" jdbcType="SMALLINT" property="adminId" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="email" jdbcType="VARCHAR" property="email" />
@@ -15,7 +15,7 @@
     <result column="suppliers_id" jdbcType="SMALLINT" property="suppliersId" />
     <result column="role_id" jdbcType="SMALLINT" property="roleId" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shsxt.sso.pojo.AdminWithBLOBs">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shsxt.common.pojo.AdminWithBLOBs">
     <result column="nav_list" jdbcType="LONGVARCHAR" property="navList" />
     <result column="todolist" jdbcType="LONGVARCHAR" property="todolist" />
   </resultMap>
@@ -84,7 +84,7 @@
   <sql id="Blob_Column_List">
     nav_list, todolist
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.shsxt.sso.pojo.AdminExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.shsxt.common.pojo.AdminExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -100,7 +100,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.shsxt.sso.pojo.AdminExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.shsxt.common.pojo.AdminExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -126,13 +126,13 @@
     delete from t_admin
     where admin_id = #{adminId,jdbcType=SMALLINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.shsxt.sso.pojo.AdminExample">
+  <delete id="deleteByExample" parameterType="com.shsxt.common.pojo.AdminExample">
     delete from t_admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.shsxt.sso.pojo.AdminWithBLOBs">
+  <insert id="insert" parameterType="com.shsxt.common.pojo.AdminWithBLOBs">
     insert into t_admin (admin_id, user_name, email, 
       password, ec_salt, add_time, 
       last_login, last_ip, lang_type, 
@@ -144,7 +144,7 @@
       #{agencyId,jdbcType=SMALLINT}, #{suppliersId,jdbcType=SMALLINT}, #{roleId,jdbcType=SMALLINT}, 
       #{navList,jdbcType=LONGVARCHAR}, #{todolist,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.shsxt.sso.pojo.AdminWithBLOBs">
+  <insert id="insertSelective" parameterType="com.shsxt.common.pojo.AdminWithBLOBs">
     insert into t_admin
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="adminId != null">
@@ -235,7 +235,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.shsxt.sso.pojo.AdminExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.shsxt.common.pojo.AdminExample" resultType="java.lang.Long">
     select count(*) from t_admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -329,7 +329,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.shsxt.sso.pojo.AdminWithBLOBs">
+  <update id="updateByPrimaryKeySelective" parameterType="com.shsxt.common.pojo.AdminWithBLOBs">
     update t_admin
     <set>
       <if test="userName != null">
@@ -374,7 +374,7 @@
     </set>
     where admin_id = #{adminId,jdbcType=SMALLINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shsxt.sso.pojo.AdminWithBLOBs">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shsxt.common.pojo.AdminWithBLOBs">
     update t_admin
     set user_name = #{userName,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
@@ -391,7 +391,7 @@
       todolist = #{todolist,jdbcType=LONGVARCHAR}
     where admin_id = #{adminId,jdbcType=SMALLINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.shsxt.sso.pojo.Admin">
+  <update id="updateByPrimaryKey" parameterType="com.shsxt.common.pojo.Admin">
     update t_admin
     set user_name = #{userName,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},

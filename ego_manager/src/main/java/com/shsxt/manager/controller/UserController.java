@@ -5,7 +5,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.shsxt.common.enums.BaseResultEnum;
 import com.shsxt.common.result.BaseResult;
 import com.shsxt.manager.service.CookieService;
-import com.shsxt.sso.pojo.Admin;
+import com.shsxt.common.pojo.Admin;
 import com.shsxt.sso.service.SSOService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
