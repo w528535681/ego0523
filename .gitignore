@@ -8,3 +8,5 @@
 /ego_rpc/target/classes/
 /ego_rpc/target/
 /ego_sso/target/
+/ego_order/target/
+/ego_order/ego_order.iml

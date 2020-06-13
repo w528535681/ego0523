@@ -16,6 +16,8 @@
         <module>ego_portal</module>
         <module>ego_rpc</module>
         <module>ego_sso</module>
+        <module>ego_order</module>
+
     </modules>
 
     <!-- 继承 spring-boot-starter-parent 依赖 -->
