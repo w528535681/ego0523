@@ -99,7 +99,7 @@ mybatis:
 # Mybatis SQL 打印(方法接口所在的包，不是 Mapper.xml 所在的包)
 logging:
   level:
-    com.ego.manager.mapper: debug
+    com.shsxt.manager.mapper: debug
 
 # Redis Key
 #用户票据key

@@ -22,6 +22,7 @@ public class MvcConfig implements WebMvcConfigurer {
 	@Autowired
 	private PortalLoginInterceptor loginInterceptor;
 
+
 	/**
 	 * 拦截器配置
 	 * addInterceptor:添加拦截器
@@ -33,6 +34,7 @@ public class MvcConfig implements WebMvcConfigurer {
 	 */
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
+
 		registry.addInterceptor(loginInterceptor)
 				.addPathPatterns("/cart/**")
 				.excludePathPatterns("/static/**")

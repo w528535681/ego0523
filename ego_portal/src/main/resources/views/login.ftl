@@ -1995,6 +1995,7 @@
 
 </div>
 
+<input type="hidden" id="redirectUrl" value="${redirectUrl!''}"/>
 <script type="text/javascript">
     // 用户登录
     function userLogin() {
@@ -2005,7 +2006,12 @@
             dataType: "JSON",
             success: function (result) {
                 if (200 == result.code) {
-                    location.href = "${ctx}/index";
+                    // 如果存在重定向 url 则重定向至该 url
+                    if ($("#redirectUrl").val()) {
+                        location.href = $("#redirectUrl").val();
+                    }else {
+                        location.href = "${ctx}/index";
+                    }
                 } else {
                     layer.msg("用户名或密码错误，请重新输入！");
                 }

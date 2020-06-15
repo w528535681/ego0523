@@ -27,6 +27,7 @@ public class PageController {
 		return page;
 	}
 
+
 	@RequestMapping("/")
 	public String page() {
 		return "index";

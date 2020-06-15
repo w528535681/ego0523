@@ -45,7 +45,7 @@
         <!-- mysql 数据库依赖 -->
         <mysql.version>8.0.18</mysql.version>
         <!-- druid 连接池依赖 -->
-        <druid.version>1.1.21</druid.version>
+        <druid.version>1.1.20</druid.version>
         <!-- 七牛云sdk 依赖-->
         <qiniu.version>[7.2.0, 7.2.99]</qiniu.version>
         <!--dubbo 依赖-->
